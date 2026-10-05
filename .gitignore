@@ -1,0 +1,18 @@
+# Système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+
+# Fichiers temporaires
+*.tmp
+*.log
+
+# Sauvegardes
+*.bak
+
+# PHP
+vendor/
+
+# Ancien dossier de test éventuel

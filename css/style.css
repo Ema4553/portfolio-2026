@@ -1,0 +1,1167 @@
+/*___________ FONTS ___________*/
+
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+.iceland-regular {
+    font-family: "Iceland", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*__________GLOBAL__________*/
+
+:root {
+    --text-color-bleu: #00ffff;
+    --bleu-clair: #00bebe;
+    --bleu-moyen: #009191;
+    --bleu-fonce: #005a5a;
+    --gris-clair: #333333;
+    --gris-moyen: #222222;
+    --gris-fonce: #1d1d1d;
+}
+
+html {
+    font-family: 'Iceland', cursive;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--gris-fonce);
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+body {
+    padding-top: 3.75rem;
+    margin: 0;
+}
+
+main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+footer {
+    display: block;
+    margin: 0;
+    padding-top: 1rem;
+    text-align: center;
+    background-color: var(--gris-moyen);
+    box-shadow: 0px 1px 2px rgba(0, 255, 255, 0.5),
+        0px 2px 4px rgba(0, 255, 255, 0.5),
+        0px 4px 8px rgba(0, 255, 255, 0.5),
+        0px 8px 16px rgba(0, 255, 255, 0.5);
+}
+
+section {
+    scroll-margin-top: 3.75rem;
+}
+
+.section2 {
+    scroll-margin-top: 6.875rem;
+}
+
+
+/*________________TITRES_______________*/
+
+h1 {
+    text-align: center;
+    padding-top: 2.5rem;
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 0.625rem;
+    font-size: 3rem;
+    padding-bottom: 1.25rem;
+}
+
+h3 {
+    padding-top: 0.625rem;
+    padding-bottom: 1.25rem;
+    font-size: 2rem;
+}
+
+/*____________________TEXTES______________________*/
+
+p {
+    font-size: 1.5rem;
+    font-family: 'Montserrat';
+}
+
+strong {
+    color: var(--text-color-bleu);
+}
+
+.infos {
+    font-weight: bold;
+}
+
+p,
+h1,
+h2,
+h3 {
+    transition: color 0.3s ease;
+}
+
+h1, h2, h3 {
+    overflow-wrap: break-word;
+}
+
+/*__________MENU DE NAVIGATION__________*/
+
+/*--- NAV ----*/
+.main-menu {
+    grid-area: 1/content;
+    place-self: end;
+    align-self: center;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/*--- A HREF LOGO ----*/
+.logo-link {
+    align-self: center;
+}
+
+.logo-link img {
+    width: 6.25rem;
+    height: auto;
+}
+
+/*---- HEADER ----*/
+.page-header {
+    width: 100%;
+    margin: 0;
+    font-size: 2rem;
+    border: 1px solid transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 98%;
+    padding: 0;
+    z-index: 1000;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    background: var(--gris-moyen);
+    box-shadow: 0px 1px 2px rgba(0, 255, 255, 0.5),
+        0px 2px 4px rgba(0, 255, 255, 0.5),
+        0px 4px 8px rgba(0, 255, 255, 0.5),
+        0px 8px 16px rgba(0, 255, 255, 0.5);
+}
+
+
+/*_________________ MENU DE NAVIGATION : MENU BURGER _________________*/
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ---- BUTTON ----- */
+.btn-menu {
+    background: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1.375rem;
+    cursor: pointer;
+
+    padding: 0;
+}
+
+/*----- UL -----*/
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    position: absolute;
+    background: var(--gris-moyen);
+    color: white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    visibility: hidden;
+    transition-duration: 200ms;
+}
+
+.menu-list.open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    visibility: visible;
+    transition-duration: 500ms;
+}
+
+/*---- LI ----*/
+.menu-item {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid var(--text-color-bleu);
+}
+
+.menu-link {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu-link:hover {
+    color: #fff;
+    background-color: var(--gris-clair);
+    box-shadow: inset 0px 2px 4px rgba(0, 255, 255, 0.3),
+        inset 0px 4px 8px rgba(0, 255, 255, 0.3),
+        inset 0px 8px 16px rgba(0, 255, 255, 0.3);
+    transition: 0.2s;
+    transform: translateY(2px);
+
+}
+
+
+/*_________________ PRESENTATION : SECTION 1 _________________*/
+
+.presentation-contenu {
+    padding: 1.25rem 0;
+}
+
+.section1 {
+    scroll-margin-top: 8rem;
+}
+
+.section1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#presentation {
+    width: 100%;
+    height: auto;
+}
+
+.presentation {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.presentation-texte1 {
+    margin-bottom: 3rem;
+}
+
+.btn-cv {
+    box-shadow: 
+        0px 1px 2px rgba(0, 255, 255, 0.5),
+        0px 2px 3px rgba(0, 255, 255, 0.4),
+        0px 3px 4px rgba(0, 255, 255, 0.3);
+    background-color: var(--gris-moyen);
+    color: white;
+    padding: 0.8rem 1rem;
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.btn-cv:hover {
+    box-shadow: 
+        0px 2px 3px rgba(0, 255, 255, 0.6),
+        0px 4px 5px rgba(0, 255, 255, 0.5),
+        0px 6px 6px rgba(0, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+
+
+/*_________________ PARCOURS : SECTION 2 _________________*/
+
+#parcours,
+#competences,
+#projets {
+    width: 100%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/*Changement du style de la balise abbr*/
+abbr {
+    position: relative;
+    cursor: help;
+}
+
+abbr::after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    bottom: 150%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--bleu-moyen), var(--bleu-fonce));
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+abbr:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* timeline */
+.timeline {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    color: var(--gris-clair);
+    display: grid;
+    gap: 35px;
+    background-image: linear-gradient(var(--text-color-bleu) 0 50%);
+    background-size: 4px 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    hyphens: auto;
+}
+
+.timeline-item {
+    border-radius: 7px;
+    padding: 20px;
+    background: white;
+
+    width: calc(100% - 50px);
+    position: relative;
+}
+
+.timeline-item::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    position: absolute;
+    top: 30%;
+    right: 0;
+    transform: translate(95%, 65%);
+}
+
+.timeline-item::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 4px solid var(--text-color-bleu);
+    border-radius: 50%;
+    background: radial-gradient(var(--gris-moyen) 0 20%);
+    position: absolute;
+    top: 30%;
+    right: -48px;
+    transform: translate(50%, 50%);
+
+}
+
+.timeline-heading {
+    font-size: 1.6rem;
+    margin: 0 0 5px;
+}
+
+.timeline-date {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.timeline-description {
+    color: var(--bleu-clair);
+    margin: 15px 0 0 0;
+    font-size: 1.2rem;
+}
+
+.parcours-texte1,
+.parcours-texte2 {
+    margin-top: 2.5rem;
+}
+
+
+
+/*_________________ COMPETENCES : SECTION 3 _________________*/
+
+.section3 {
+    margin: 40px 0;
+}
+
+.section3 h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.comp {
+    list-style-type: none;
+    padding: 0 2rem;
+    display: grid;
+    justify-content: center;
+    column-gap: 1rem;
+    justify-items: center;
+    row-gap: 2rem;
+}
+
+.liste-comp {
+    background-color: var(--gris-clair);
+    border: 2px solid var(--text-color-bleu);
+    border-radius: 8px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.liste-comp:hover {
+    transform: translateY(-5px);
+}
+
+.titre-comp {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.logiciel img {
+    width: 45px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.logiciel figure {
+    margin: 1rem 0;
+}
+
+figcaption p {
+    font-size: 1.1rem;
+    color: rgba(0, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+figcaption a {
+    color: var(--text-color-bleu);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+figcaption a:hover {
+    color: white;
+}
+
+.section3 p {
+    margin-bottom: 1.5rem;
+}
+
+
+
+/*_________________ PROJETS : SECTION 4 _________________*/
+
+.section4 {
+    scroll-margin-top: 8rem;
+}
+
+.titre-projet {
+    width: 100%;
+    text-align: center;
+}
+
+.titre-projet h2 {
+    color: white;
+}
+
+.titre-projet p {
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.projets-content {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 0 1fr;
+    justify-items: center;
+}
+
+.projet-univ {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.projet-perso {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.projets-galerie {
+    max-width: 70%;
+    height: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 40px 10px;
+    box-shadow: 0px 1px 2px rgba(0, 255, 255, 0.5),
+        0px 2px 4px rgba(0, 255, 255, 0.5),
+        0px 4px 8px rgba(0, 255, 255, 0.5),
+        0px 8px 16px rgba(0, 255, 255, 0.5);
+    background-color: var(--gris-moyen);
+}
+
+.projets-galerie:hover {
+    box-shadow: 0px 2px 4px rgba(0, 255, 255, 0.7),
+        0px 4px 8px rgba(0, 255, 255, 0.7),
+        0px 8px 16px rgba(0, 255, 255, 0.7),
+        0px 12px 24px rgba(0, 255, 255, 0.7);
+    transform: translateY(-10px);
+    transition: 0.2s;
+}
+
+.projets-galerie h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.projet-figure {
+    margin: 1rem 0;
+}
+
+.projet-figure img {
+    height: auto;
+    max-width: 100%;
+    filter: invert(12%) sepia(92%) saturate(4027%) hue-rotate(172deg) brightness(97%) contrast(105%);
+    object-fit: contain;
+}
+
+.projet-figure img:hover {
+    filter: invert(30%) sepia(94%) saturate(1496%) hue-rotate(156deg) brightness(94%) contrast(101%);
+}
+
+.projet-figure figcaption {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#projets a {
+    color: white;
+    text-decoration: none;
+}
+
+#projets a:hover {
+    color: var(--bleu-moyen);
+    text-decoration: underline;
+}
+
+
+
+/*_____________________ FOOTER ________________________*/
+
+footer p:first-child {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+footer p:last-child {
+    padding-bottom: 2rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.credits {
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+footer a {
+    color: var(--bleu-moyen);
+}
+
+footer a:visited {
+    color: var(--bleu-fonce);
+}
+
+
+/*_____________________BOUTON REVENIR EN HAUT_____________________*/
+
+#scrollTopBtn {
+    display: block;
+    z-index: 99;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    background-color: #333333bf;
+    font-size: 2rem;
+}
+
+#scrollTopBtn i {
+    color: white;
+}
+
+#scrollTopBtn:hover,
+#scrollTopBtn:focus {
+    cursor: pointer;
+    background-color: var(--bleu-moyen)
+}
+
+/*______________________RESEAUX SOCIAUX______________________*/
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.glass-btn {
+    width: 50px;
+    height: 55px;
+    background-color: var(--gris-clair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    margin-left: 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.glass-btn:hover {
+    background-color: #252525;
+    transform: translateY(-5px);
+    transition: all 0.3s;
+}
+
+.violet-btn {
+    -webkit-box-shadow: 0px 25px 40px -10px rgba(155, 111, 255, 0.63);
+    -moz-box-shadow: 0px 25px 40px -10px rgba(155, 111, 255, 0.63);
+    box-shadow: 0px 25px 40px -10px rgba(155, 111, 255, 0.63);
+}
+
+.violet-btn:hover {
+    -webkit-box-shadow: 0px 20px 50px -5px rgba(155, 111, 255, 0.80);
+    -moz-box-shadow: 0px 20px 50px -5px rgba(155, 111, 255, 0.80);
+    box-shadow: 0px 20px 50px -5px rgba(155, 0, 255, 0.80);
+}
+
+.bleu-btn {
+    -webkit-box-shadow: 0px 20px 40px -10px rgba(31, 203, 255, 0.63);
+    -moz-box-shadow: 0px 20px 40px -10px rgba(31, 203, 255, 0.63);
+    box-shadow: 0px 20px 40px -10px rgba(31, 203, 255, 0.63);
+}
+
+.bleu-btn:hover {
+    -webkit-box-shadow: 0px 20px 50px -5px rgba(31, 203, 255, 0.80);
+    -moz-box-shadow: 0px 20px 50px -5px rgba(31, 203, 255, 0.80);
+    box-shadow: 0px 20px 50px -5px rgba(25, 125, 255, 0.8);
+}
+
+.violet-btn img,
+.bleu-btn img {
+    height: 4rem;
+    width: auto;
+}
+
+
+
+/*______________________ PAGE INTERMEDIAIRE ______________________*/
+
+.titrePrincipalProjets {
+    padding-bottom: 2rem;
+}
+
+.projet {
+    border-radius: 5px;
+    padding: 0.625rem 1rem;
+    margin: 0 1.5rem 1.5rem;
+    box-shadow: 0px 1px 2px rgba(0, 255, 255, 0.5),
+        0px 2px 4px rgba(0, 255, 255, 0.5),
+        0px 4px 8px rgba(0, 255, 255, 0.5),
+        0px 8px 16px rgba(0, 255, 255, 0.5);
+    background-color: var(--gris-moyen);
+    overflow: hidden;
+}
+
+.projet:hover {
+    box-shadow: 0px 2px 4px rgba(0, 255, 255, 0.7),
+        0px 4px 8px rgba(0, 255, 255, 0.7),
+        0px 8px 16px rgba(0, 255, 255, 0.7),
+        0px 12px 24px rgba(0, 255, 255, 0.7);
+    transform: translateY(-10px);
+    transition: 0.2s;
+}
+
+.projet a {
+    color: var(--bleu-moyen);
+    text-decoration: none;
+}
+
+.projet h2 {
+    color: white;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.projet a:visited {
+    color: var(--bleu-clair);
+}
+
+.projet p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+/* TODO : pour grands écran mettre : 
+    padding: 1rem 0;
+*/
+.projet img {
+    width: 100%;
+    height: 12rem;
+    padding: 1.5rem 0;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+
+/*______________________ PAGE GALERIE ______________________*/
+
+.main-galerie h2 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.main-galerie section {
+    margin-bottom: 4rem;
+}
+
+.body-intermediaire footer {
+    margin-top: 3rem;
+}
+
+.img-presentation {
+    max-width: 100%;
+}
+
+.img-presentation-app {
+    max-width: 40%;
+}
+
+.section-explication-galerie div {
+    text-align: center;
+}
+
+.text1-galerie, .text2-galerie {
+    padding: 0 1rem;
+}
+
+.text2-galerie {
+    margin-top: 4rem;
+    text-decoration: underline;
+}
+
+.section-competences-galerie p{
+    text-align: center;
+}
+
+/*----- CARROUSEL ------*/
+.carrousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carrousel-images {
+    display: flex;
+    padding: 0;
+    margin: 2rem 0;
+    transition: transform 0.5s ease;
+}
+
+.carrousel-item {
+    flex: 0 0 100%;
+    list-style: none;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 30rem;
+    border-radius: 8px;
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+
+/*----- BOUTONS DE NAVIGATION - CARROUSEL------*/
+.carrousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: lightgray;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.carrousel-btn:hover {
+    color: var(--bleu-moyen);
+}
+
+.carrousel-btn.left {
+    left: -0.5rem;
+    top: 250px;
+}
+
+.carrousel-btn.right {
+    right: -0.5rem;
+    top: 250px;
+}
+
+
+
+
+
+/*_________________ RESPONSIVE _________________*/
+/*Fonctionne normalement pour les écran de taille minimum 370 de largeur sinon, il y a un décalage*/
+
+@media (min-width: 480px) {
+    .logiciel img {
+        width: 45px;
+    }
+
+    .img-presentation-app {
+        max-width: 30%;
+    }
+
+    .img-presentation-web, .img-presentation-none {
+        width: 80%;
+    }
+
+    .presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-cv {
+        max-width: 60%;
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+
+    .comp {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .projets-content {
+        justify-content: center;
+    }
+
+    .comp {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .logiciel img {
+        width: 45px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    .liste-comp {
+        width: 80%;
+    }
+
+    label {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: 1.5rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1.5rem;
+    }
+
+    .carrousel-btn.right {
+        top: 300px;
+    }
+
+    .carrousel-btn.left {
+        top: 300px;
+    }
+
+
+    /*GALERIE PROJET*/
+    .carrousel-container {
+        max-width: 100%;
+    }
+
+    .carrousel-btn {
+        font-size: 1.375rem;
+    }
+
+    .img-presentation-app {
+        max-width: 20%;
+    }
+
+    .img-presentation-none {
+        width: 50%;
+    }
+
+    .img-presentation-web {
+        width: 90%;
+    }
+}
+
+/*A ENLEVER PLUS TARD*/
+@media (min-width: 870px) {
+
+    .presentation-contenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        align-items: center;
+        padding: 1.25rem;
+        margin-right: 1.25rem;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .timeline {
+        max-width: 75rem;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-position: center;
+    }
+
+    .timeline-item {
+        width: calc(50% - 48px);
+    }
+
+    .timeline-item:not(:first-child) {
+        margin: -20px 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        justify-self: right;
+    }
+
+    .timeline-item:nth-child(even)::before {
+        right: auto;
+        left: -48px;
+        transform: translate(-50%, 50%);
+    }
+
+    .timeline-item:nth-child(even)::after {
+        clip-path: polygon(0 50%, 100% 100%, 100% 0);
+        right: auto;
+        left: 0;
+        transform: translate(-95%, 70%);
+    }
+
+    .section1 {
+        grid-template-columns: 1fr;
+    }
+
+    .presentation-contenu {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .menu-list {
+        clip-path: none;
+        position: static;
+        display: flex;
+        column-gap: 20px;
+        visibility: visible;
+    }
+
+    .menu-item {
+        padding: 0;
+        border: none;
+    }
+
+    .btn-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /*METTRE LES BOITES PROJETS COTE A COTE*/
+    .projets-content {
+        display: flex;
+        gap: 2.5rem;
+        justify-content: center;
+    }
+
+    /*METTRE LES BOITES DE PROJET COTE A COTE SUR PAGE INTERMEDIAIRE*/
+    .container-projet-intermediaire {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .projet {
+        max-width: 500px;
+    }
+
+    /*GALERIE PROJETS*/
+    .carrousel-container {
+        max-width: 50rem;
+    }
+
+    .carrousel-btn {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+
+    .carrousel-item img {
+        max-width: 50rem;
+    }
+
+    .section-competences-galerie li {
+        width: 60%;
+    }
+
+    .section-competences-galerie ul {
+        justify-items: center;
+        gap: 0;
+    }
+
+    .section-logiciels-galerie ul {
+        gap: 4rem;
+    }
+
+    .comp {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .liste-comp {
+        max-width: 70%;
+    }
+
+    .img-presentation-none {
+        width: 35%;
+    }
+
+}
+
+@media (min-width: 1440px){
+
+    .img-presentation-web, .img-presentation-none {
+        max-width: 50rem;
+    }
+
+    .img-presentation-app {
+        max-width: 10%;
+    }
+
+    .section-explication-galerie div {
+        text-align: center;
+    }
+
+    .text1-galerie, .text2-galerie {
+        padding: 0 3rem;
+    }
+
+    .comp {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    
+}
+
+@media (min-width: 2000px){
+    section{
+        padding: 0 10rem;
+    }
+}
