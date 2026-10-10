@@ -29,7 +29,7 @@ header("Content-type: text/html; charset=utf-8");
 
     <main>
         <section id="presentation" class="section1">
-            <h1> Ema Oudin <span>-</span> À la recherche d'un poste de développeuse junior</h1>
+            <h1>À la recherche d'un poste de développeuse junior</h1>
             <div class="presentation-contenu">
                 <div class="presentation">
                     <h2>Qui suis-je ? Hello ! Moi c'est Ema</h2>
@@ -77,23 +77,27 @@ header("Content-type: text/html; charset=utf-8");
 
             <p class="parcours-texte1">
                 J'ai étudié pendant <strong>3 ans</strong> au lycée Jacques Monod,
-                situé à Saint-Jean-de-Braye, dans le Loiret. C'est ici que j'ai appris
-                à coder des programmes basiques en <strong>Python</strong> grâce à ma
-                spécialité <strong><abbr title="Numérique et Sciences de l'Informatique">NSI</abbr></strong>.
-                J'ai aussi choisi les spécialités <strong>Physique-Chimie</strong> et <strong>Mathématiques</strong>.
+                situé à Saint-Jean-de-Braye, dans le Loiret où j'ai suivi les spécialités <strong><abbr title="Numérique et Sciences de l'Informatique">NSI</abbr></strong>,
+                <strong>Physique-Chimie</strong> et <strong>Mathématiques</strong>. 
+
+                C'est grâce à la NSI que j'ai découvert la programmation et appris à développer mes premiers simples petits programmes en <strong>Python</strong>.
+                Cette première approche du code m'a permis de développer ma logique, ma curiosité et mon envie d'explorer davantage le monde de l'informatique.
             </p>
 
-           <!-- TODO : Ajouter les compétences apprises depuis l'an dernier --> 
             <p class="parcours-texte2">
-                Je prépare mon <strong><abbr title="Bachelor Universitaire de Technologie">BUT</abbr></strong> <strong><abbr title="Métiers du Multimédia et de l'Internet">MMI</abbr></strong> à l'IUT de Laval, en Mayenne.
-                J'apprends à coder avec divers langages de programmation notamment <strong>Java</strong>, <strong>PHP</strong>, <strong>Javascript</strong> et <strong>Dart</strong>.
-                Je développe également mes compétences en HTML et en CSS.
+                En 2026, j'ai obtenu mon <strong><abbr title="Bachelor Universitaire de Technologie">BUT</abbr></strong> <strong><abbr title="Métiers du Multimédia et de l'Internet">MMI</abbr></strong> à l'IUT de Laval, en Mayenne.
+                Cette formation pluridisciplinaire m'a permis d'acquérir des compétences aussi bien techniques que créatives, notamment en développement web, en programmation et en création numérique.
+                J'ai pu travailler avec différents langages, tels que <strong>Java</strong>, <strong>PHP</strong>, <strong>Javascript</strong> et <strong>Dart</strong>, tout en approfondissant mes connaissances en <strong>HTML et CSS</strong>.
+                J'ai également appris à utiliser divers outils professionnels comme <strong>Visual Studio Code</strong>, <strong>Android Studio</strong>, <strong>Jira</strong>, la suite <strong>Affinity</strong> et <strong>Da Vinci Resolve</strong>, pour mener à bien des projets variés, de la conception au développement.
+                Cette diversité d'apprentissages m'a permis de gagner en polyvalence dans les projets que je peux réaliser.
+
+                J'ai appris à coder avec divers langages de programmation notamment <strong>Java</strong>, <strong>PHP</strong>, <strong>Javascript</strong> et <strong>Dart</strong>.
+                J'ai aussi développé mes compétences en HTML et en CSS.
                 J'utilise des logiciels comme la suite Affinity, Da Vinci Resolve, VS Code, Android Studio et Jira.
             </p>
 
         </section>
 
-        <!-- TODO : Ajouter les compétences et logiciels appris et utilisés -->
         <section id="competences" class="section3">
             <h2>Compétences et logiciels</h2>
             <ul class="comp">
