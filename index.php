@@ -94,7 +94,6 @@ header("Content-type: text/html; charset=utf-8");
 
                 J'ai appris à coder avec divers langages de programmation notamment <strong>Java</strong>, <strong>PHP</strong>, <strong>Javascript</strong> et <strong>Dart</strong>.
                 J'ai aussi développé mes compétences en HTML et en CSS.
-                J'utilise des logiciels comme la suite Affinity, Da Vinci Resolve, VS Code, Android Studio et Jira.
             </p>
 
         </section>
